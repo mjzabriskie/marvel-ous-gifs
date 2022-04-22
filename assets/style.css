@@ -1,0 +1,54 @@
+*{
+    margin: ;
+    padding: ;
+    box-sizing: ;
+    font-family: ;
+}
+.navbar{
+    height: ;
+    display: ;
+    align-items: ;
+}
+nav{
+    flex: ;
+    text-align: ;
+}
+nav ul li{
+    list-style: ;
+    display: ;
+    margin: ;
+}
+nav ul li a {
+    text-decoration: ;
+    color: ;
+    font-size: ;
+}
+.container{
+    width: ;
+    min-height: ;
+    padding: ;
+    display: ;
+    align-items: ;
+    justify-content: ;
+}
+.search-bar input{
+    background: ;
+    flex: ;
+    border: ;
+    outline: ;
+    padding: ;
+    font-size: ;
+    color: ;
+}
+.placeholder{
+    color: ;
+}
+.search-bar button {
+    width: ;
+    border: ;
+    border-radius: ;
+    width: ;
+    height: ;
+    background: ;
+    cursor: auto;
+}
