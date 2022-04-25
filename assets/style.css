@@ -1,54 +1,22 @@
-*{
-    margin: ;
-    padding: ;
-    box-sizing: ;
-    font-family: ;
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.navbar{
-    height: ;
-    display: ;
-    align-items: ;
+
+.red {
+    color: #ff0000;
 }
-nav{
-    flex: ;
-    text-align: ;
+
+.font-beba {
+    font-family: 'Bebas Neue', cursive;
 }
-nav ul li{
-    list-style: ;
-    display: ;
-    margin: ;
+
+.container {
+    background-image: url("./images/Marvel-hero.webp");
+    background-size: cover;
 }
-nav ul li a {
-    text-decoration: ;
-    color: ;
-    font-size: ;
-}
-.container{
-    width: ;
-    min-height: ;
-    padding: ;
-    display: ;
-    align-items: ;
-    justify-content: ;
-}
-.search-bar input{
-    background: ;
-    flex: ;
-    border: ;
-    outline: ;
-    padding: ;
-    font-size: ;
-    color: ;
-}
-.placeholder{
-    color: ;
-}
-.search-bar button {
-    width: ;
-    border: ;
-    border-radius: ;
-    width: ;
-    height: ;
-    background: ;
-    cursor: auto;
+
+.white {
+    color: #ffffff;
 }
