@@ -1,0 +1,22 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.red {
+    color: #ff0000;
+}
+
+.font-beba {
+    font-family: 'Bebas Neue', cursive;
+}
+
+.container {
+    background-image: url("./images/Marvel-hero.webp");
+    background-size: cover;
+}
+
+.white {
+    color: #ffffff;
+}
