@@ -1,54 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Marvel-ous-gifs</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" >
-        <link rel="stylesheet" href="./assets/style.css" />
-    </head>
-    <body>
-             <header>
-                <h1 class="title is-1 center red font-beba">
-                    Marvel-Us-Gifs
-                </h1>
-            </header>       
-            <section class="hero is-fullheight has-background-black">
 
-            <div class="hero-body">
-                <div class="container">
-                    <figure class="image center">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Marvel-ous-gifs</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <link rel="stylesheet" href="./assets/style.css" />
+</head>
+
+<body>
+    <header>
+        <h1 class="title is-1 center red font-beba">
+            Marvel-Us-Gifs
+        </h1>
+    </header>
+    <section class="hero is-fullheight has-background-black">
+        <div class="hero-body">
+            <div class="container">
+                <!-- <figure class="image center">
                         <img class="image" src="./assets/images/Marvel-hero.webp" alt="" />
-                    </figure>
-                    <input class="input is-danger is-rounded" type="text" placeholder="Search A Hero">
-                </div>
+                    </figure> -->
+                <form id="user-form">
+                    <div class="field has-addons is-justify-content-center">
+                        <div id="yolo" class="control">
+                            <input id="search-input" class="input is-danger is-rounded" type="text" placeholder="Search A Hero">
+                        </div>
+                        <div id="search-container" class="control">
+                            <button type="submit" class="button is-danger">Search</button>
+                        </div>
+                    </div>
+                </form>    
+                
             </div>
-        </section>
-        <section class="has-background-black">
-            <div class="hero-body">
+        </div>
+    </section>
+    
+    <section class="has-background-black">
+        <div class="hero-body">
             <header>
                 <h2 class="title is-2 center red font-beba">
                     Character name here
                 </h2>
             </header>
             <div class="columns">
-            <div class="column">
-                <img src="./assets/images/Marvel-hero.webp" alt=""> 
+                <div class="column">
+                    <img src="./assets/images/Marvel-hero.webp" alt="">
+                </div>
+                <div class="column content">
+                    <header class="">
+                        <h3 class="white subtitle is-3 center">
+                            Brief Bio
+                        </h3>
+                    </header>
+                    <p class="white">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem distinctio numquam, unde
+                        aliquid quo commodi quos harum. Minus nisi laborum nulla harum. Distinctio deserunt unde iusto
+                        itaque error, quisquam magnam!
+                    </p>
+                </div>
             </div>
-            <div class="column content">
-                    <h3 class="white subtitle is-3 center">
-                        Brief Bio
-                    </h3>
-                <p class="white has-text-centered">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem distinctio numquam, unde aliquid quo commodi quos harum. Minus nisi laborum nulla harum. Distinctio deserunt unde iusto itaque error, quisquam magnam!
-                </p>
-            </div>
-            </div>
-            </div>
-        </section>
-        <section class="has-background-black">
-            <div class="hero-body">
+        </div>
+    </section>
+    <section class="has-background-black">
+        <div class="hero-body">
             <header class="">
                 <h2 class="title is-2 center red font-beba top">
                     Popular Gifs
@@ -70,7 +86,9 @@
                     <img src="./assets/images/Marvel-hero.webp" alt="">
                 </div>
             </div>
-            </div>
-        </section>
-    </body>
+        </div>
+    </section>
+    <script src="./assets/js/marvel.js"></script>
+</body>
+
 </html>
