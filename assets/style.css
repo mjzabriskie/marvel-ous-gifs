@@ -12,9 +12,10 @@
     font-family: 'Bebas Neue', cursive;
 }
 
-.container {
+.hero {
     background-image: url("./images/Marvel-hero.webp");
     background-size: cover;
+    /* background-position: 80%; */
 }
 
 .white {
