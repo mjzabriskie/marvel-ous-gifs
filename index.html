@@ -7,25 +7,26 @@
     <title>Marvel-ous-gifs</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="./assets/style.css" />
 </head>
 
 <body>
     <header>
-        <h1 class="title is-1 center red font-beba">
-            Marvel-Us-Gifs
+        <h1 class="title is-1 center red font-beba has-background-black">
+            Marvelous- Gifs
         </h1>
     </header>
     <section class="hero is-fullheight has-background-black">
         <div class="hero-body">
             <div class="container">
-                <!-- <figure class="image center">
-                        <img class="image" src="./assets/images/Marvel-hero.webp" alt="" />
-                    </figure> -->
-                <form id="user-form">
+                <form id="user-form" class="user-form">
+                    <h3 class="center subtitle is-size-3 has-text-weight-bold has-text-white font-beba">
+                        Search For A Hero!
+                    </h3>
                     <div class="field has-addons is-justify-content-center">
                         <div id="yolo" class="control">
-                            <input id="search-input" class="input is-danger is-rounded" type="text" placeholder="Search A Hero">
+                            <input id="search-input" class="input is-danger is-rounded search-bar" type="text" placeholder="Search A Hero">
                         </div>
                         <div id="search-container" class="control">
                             <button type="submit" class="button is-danger">Search</button>
@@ -50,11 +51,11 @@
                 </div>
                 <div class="column content">
                     <header class="">
-                        <h3 class="white subtitle is-3 center">
+                        <h3 class="white subtitle is-3 center font-beba">
                             Brief Bio
                         </h3>
                     </header>
-                    <p class="white">
+                    <p class="white has-text-centered">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem distinctio numquam, unde
                         aliquid quo commodi quos harum. Minus nisi laborum nulla harum. Distinctio deserunt unde iusto
                         itaque error, quisquam magnam!
@@ -88,6 +89,8 @@
             </div>
         </div>
     </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     <script src="./assets/js/marvel.js"></script>
 
     <footer>
