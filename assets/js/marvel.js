@@ -21,12 +21,12 @@ var displayResults = function(hero){
 
     //loop over heros
     for (var i = 0; i < hero.data.count; i++) {
-      //format repo name
+      //populate hero name
       var heroName = hero.data.results[i].name;
 
-      //create container for each repo
+      //create container for each hero
       var heroResultEl = document.createElement("a");
-      heroResultEl.classList = "card-body";
+      heroResultEl.classList = "card";
       heroResultEl.setAttribute("href", "./character-page.html?heroName=" + heroName);
 
       //create span element to hold repo name
@@ -47,7 +47,7 @@ var getUserInput = function (event) {
     localStorage.setItem('search', heroName);
     if(heroName) {
         console.log(heroName);
-        
+
         getMarvelData(heroName);
         getGifs(heroName);
         searchInput.value = "";
