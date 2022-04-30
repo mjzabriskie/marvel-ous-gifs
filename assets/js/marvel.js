@@ -2,7 +2,7 @@ var searchEl = document.getElementById("user-form");
 var searchInput = document.getElementById("search-input");
 var resultsEl = document.querySelector("#results");
 
-
+var search = [];
 const APIKey = "1c68710c9a12fca3d6066e8f1e1bc1c1";
 const hashKey = "acdbcd7e533a37b7ba8af93b84c3021e";
 const giphyKey = "l0bmAzCfm8fxpcpAusIYozKfaOUG4B22";
@@ -44,8 +44,10 @@ var displayResults = function(hero){
 var getUserInput = function (event) {
     event.preventDefault();
     var heroName = searchInput.value.trim();
+    localStorage.setItem('search', heroName);
     if(heroName) {
         console.log(heroName);
+        
         getMarvelData(heroName);
         getGifs(heroName);
         searchInput.value = "";
