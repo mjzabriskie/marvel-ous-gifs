@@ -41,3 +41,24 @@
 .white {
     color: #ffffff;
 }
+
+.cards {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    background-image: linear-gradient(340deg, #ff0000, #0000);
+    background-size: cover;
+    border-radius: 15px;
+    padding: 20px;
+    color: #c0c0c0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    max-width: 15%;
+    transition: 200ms;
+}
+
+.cards:hover {
+    transform: scale(1.05);
+    transition: 500ms, 500ms;
+}

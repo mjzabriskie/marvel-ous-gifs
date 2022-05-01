@@ -26,24 +26,29 @@ var displayResults = function (hero) {
 
     //create container for each hero
     var heroResultEl = document.createElement("a");
-    heroResultEl.classList = "card";
+    heroResultEl.classList = "cards";
     heroResultEl.setAttribute("href", "./character-page.html?heroName=" + heroName);
     heroResultEl.setAttribute("id", "result-btn");
-    
+
     // create img element
     var characterImg = hero.data.results[i].thumbnail.path;
+    var imgContainerEl = document.createElement("div")
     var imgEl = document.createElement("img");
+    imgContainerEl.classList = "card-image";
+    imgEl.classList = "";
     imgEl.setAttribute("src", characterImg + "/portrait_fantastic.jpg")
+    imgContainerEl.appendChild(imgEl);
 
     //create span element to hold repo name
     var heroNameEl = document.createElement("span");
-    heroNameEl.setAttribute("id", "hero-name-btn");
+    heroNameEl.setAttribute("class", "hero-name-btn");
+    heroNameEl.classList = "hero-name-btn font-beba is-size-5"
     heroNameEl.textContent = heroName;
 
     //append to container
-    heroResultEl.appendChild(imgEl);
+    heroResultEl.appendChild(imgContainerEl);
     heroResultEl.appendChild(heroNameEl);
-    
+
 
     //append container to the dom
     resultsEl.appendChild(heroResultEl);
