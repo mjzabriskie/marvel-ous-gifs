@@ -18,10 +18,10 @@
         </h1>
     </header>
     <section class="hero is-fullheight has-background-black">
-        <div class="hero-body">
-            <div class="container">
+        <div class="test">
+            <div class="form-container">
                 <form id="user-form" class="user-form">
-                    <h3 class="center subtitle is-size-3 has-text-weight-bold has-text-white font-beba">
+                    <h3 class="center subtitle is-size-2 has-text-weight-bold has-text-white font-beba">
                         Search For A Hero!
                     </h3>
                     <div class="field has-addons is-justify-content-center">
@@ -34,11 +34,13 @@
                     </div>
                 </form>
             </div>
-            <div>
-                <h2>Results</h2>
-                <div class="results" id="results"></div>
+            <div class="results is-hidden" id="results-container">
+                <h2 class="title is-2 font-beba has-text-white center">Results</h2>
+                <div class="font-beba buttons are-large center" id="results">
+                </div>
             </div>
         </div>
+
     </section>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>

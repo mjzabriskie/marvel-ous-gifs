@@ -1,5 +1,6 @@
 var searchEl = document.getElementById("user-form");
 var searchInput = document.getElementById("search-input");
+var resultsContainerEl = document.querySelector("#results-container");
 var resultsEl = document.querySelector("#results");
 
 var search = [];
@@ -26,7 +27,7 @@ var displayResults = function(hero){
 
       //create container for each hero
       var heroResultEl = document.createElement("a");
-      heroResultEl.classList = "card";
+      heroResultEl.classList = "button";
       heroResultEl.setAttribute("href", "./character-page.html?heroName=" + heroName);
 
       //create span element to hold repo name
@@ -43,6 +44,7 @@ var displayResults = function(hero){
 
 var getUserInput = function (event) {
     event.preventDefault();
+    resultsContainerEl.classList.remove("is-hidden");
     var heroName = searchInput.value.trim();
     localStorage.setItem('search', heroName);
     if(heroName) {
@@ -54,6 +56,18 @@ var getUserInput = function (event) {
     } else {
         alert("enter hero name");
     }
+};
+
+var getUserSelection = function (event) {
+  var heroName = event.target.textContent;
+
+  console.log(heroName);
+  // localStorage.setItem('search', heroName);
+  // if(heroName) {
+  //     console.log(heroName);
+  // } else {
+  //     alert("enter hero name");
+  // }
 };
 
 $(function() {
@@ -111,6 +125,8 @@ var getGifs = function (hero) {
     })
 }
 searchEl.addEventListener("submit", getUserInput);
+
+resultsEl.addEventListener("click", getUserSelection);
 
 
 
