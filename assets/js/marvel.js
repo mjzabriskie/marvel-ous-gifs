@@ -74,7 +74,7 @@ $(function () {
         data: {
           ts: 1,
           nameStartsWith: request.term,
-          limit: 10,
+          limit: 11,
           apikey: "1c68710c9a12fca3d6066e8f1e1bc1c1",
           hash: "acdbcd7e533a37b7ba8af93b84c3021e"
 

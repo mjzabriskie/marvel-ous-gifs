@@ -17,6 +17,9 @@
     background-size: cover;
 }
 
+.mgl-large {
+    margin-left: 267px;
+}
 .user-form {
     background-image: linear-gradient(340deg, #ff0000, #0000);
     background-size: cover;
