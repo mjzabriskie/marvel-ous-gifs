@@ -130,9 +130,3 @@ $("#results").on('click', 'a', function() {
   localStorage.setItem("search", name);
   console.log(name);
 })
-
-
-
-
-
-
