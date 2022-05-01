@@ -36,7 +36,6 @@ var characterPage = function (data, dataId) {
     if(characterBio === "") {
         console.log("empty");
     }
-    console.log(characterImg);
     $("#hero-img").attr("src", characterImg + ".jpg");
     $("#hero-bio").text(characterBio);
     $("#character-name").text(characterName);
