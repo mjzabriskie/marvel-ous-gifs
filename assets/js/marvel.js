@@ -1,6 +1,5 @@
 var searchEl = document.getElementById("user-form");
 var searchInput = document.getElementById("search-input");
-var resultsContainerEl = document.querySelector("#results-container");
 var resultsEl = document.querySelector("#results");
 
 var search = [];
@@ -25,18 +24,11 @@ var displayResults = function (hero) {
     //populate hero name
     var heroName = hero.data.results[i].name;
 
-<<<<<<< HEAD
-      //create container for each hero
-      var heroResultEl = document.createElement("a");
-      heroResultEl.classList = "button";
-      heroResultEl.setAttribute("href", "./character-page.html?heroName=" + heroName);
-=======
     //create container for each hero
     var heroResultEl = document.createElement("a");
     heroResultEl.classList = "cards";
     heroResultEl.setAttribute("href", "./character-page.html?heroName=" + heroName);
     heroResultEl.setAttribute("id", "result-btn");
->>>>>>> feature/search-merge
 
     // create img element
     var characterImg = hero.data.results[i].thumbnail.path;
@@ -57,16 +49,6 @@ var displayResults = function (hero) {
     heroResultEl.appendChild(imgContainerEl);
     heroResultEl.appendChild(heroNameEl);
 
-<<<<<<< HEAD
-var getUserInput = function (event) {
-    event.preventDefault();
-    resultsContainerEl.classList.remove("is-hidden");
-    var heroName = searchInput.value.trim();
-    localStorage.setItem('search', heroName);
-    if(heroName) {
-        console.log(heroName);
-=======
->>>>>>> feature/search-merge
 
     //append container to the dom
     resultsEl.appendChild(heroResultEl);
@@ -74,38 +56,11 @@ var getUserInput = function (event) {
 
 };
 
-<<<<<<< HEAD
-var getUserSelection = function (event) {
-  var heroName = event.target.textContent;
-
-  console.log(heroName);
-  // localStorage.setItem('search', heroName);
-  // if(heroName) {
-  //     console.log(heroName);
-  // } else {
-  //     alert("enter hero name");
-  // }
-};
-
-$(function() {
-    $("#search-input").autocomplete({
-      source: function(request, response) {
-        $.ajax({
-          url: "https://gateway.marvel.com/v1/public/characters",
-          dataType: "json",
-          data: {
-            ts: 1,
-            nameStartsWith: request.term,
-            limit: 10,
-            apikey: "1c68710c9a12fca3d6066e8f1e1bc1c1",
-            hash: "acdbcd7e533a37b7ba8af93b84c3021e"
-=======
 var getUserInput = function (event) {
   event.preventDefault();
   var heroName = searchInput.value.trim();
   if (heroName) {
     console.log(heroName);
->>>>>>> feature/search-merge
 
     getMarvelData(heroName);
     getGifs(heroName);
@@ -175,11 +130,3 @@ $("#results").on('click', 'a', function() {
   localStorage.setItem("search", name);
   console.log(name);
 })
-
-resultsEl.addEventListener("click", getUserSelection);
-
-
-
-
-
-
