@@ -60,6 +60,7 @@ var getMarvelData = function () {
     fetch(apiUrl).then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
+                console.log(data);
                 var apiUrl = "https://gateway.marvel.com/v1/public/characters/" + data.data.results[0].id + "/comics?" + "ts=" + ts + "&limit=5&apikey=" + APIKey + "&hash=" + hashKey;
                 fetch(apiUrl).then(function (response) {
                     if (response.ok) {
@@ -80,6 +81,7 @@ var characterPage = function (data, dataId) {
     var characterName = data.data.results[0].name;
     var characterBio = data.data.results[0].description;
     var characterImg = data.data.results[0].thumbnail.path;
+    var emptyCharacter = data.data.results[0].comics.available;
 
     // If the API call has an empty description, a list of comics are returned.
     if (characterBio === "") {
@@ -120,11 +122,28 @@ var characterPage = function (data, dataId) {
             //append container to the dom
             comicEl.appendChild(heroResultEl);
         }
+        // checks if no comics are available 
+        if (emptyCharacter == 0) {
+            comicContainerEl.classList.add("is-hidden");
+            bioContentEl.classList.add("is-hidden");
+            console.log(true);
+        }
+    } 
+
+    // Checks if description has certain characters
+    if(characterBio.includes("<p class")) {
+        var splitHero = characterBio.split(">")
+        var newSplitHero = splitHero[1];
+        var newSplitHero2 = newSplitHero.split("<");
+        $("#hero-img").attr("src", characterImg + "/portrait_uncanny.jpg");
+        $("#hero-bio").text(newSplitHero2[0]);
+        $("#character-name").text(characterName);
+    }else {
+        // creates a hero bio if a description is pulled from API
+        $("#hero-img").attr("src", characterImg + "/portrait_uncanny.jpg");
+        $("#hero-bio").text(characterBio);
+        $("#character-name").text(characterName);
     }
-    // creates a hero bio if a description is pulled from API
-    $("#hero-img").attr("src", characterImg + "/portrait_uncanny.jpg");
-    $("#hero-bio").text(characterBio);
-    $("#character-name").text(characterName);
 };
 
 getMarvelData();
