@@ -94,7 +94,7 @@ var characterPage = function (data, dataId) {
             var comicUrl = dataId.data.results[i].urls[0].url;
 
             var heroResultEl = document.createElement("a");
-            heroResultEl.classList = "cards";
+            heroResultEl.classList = "cards column";
             heroResultEl.setAttribute("href", comicUrl);
             heroResultEl.setAttribute("target", "_blank");
             heroResultEl.setAttribute("id", "result-btn");
