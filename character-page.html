@@ -26,16 +26,21 @@
       </h1>
       <div class="columns is-centered is-multiline">
         <div class="center-img">
-          <img id="hero-img" alt="">
+          <!-- Hero img from API will be appended to img element -->
+          <img id="hero-img" alt="marvel hero image">
         </div>
         <div id="bio-content" class="column content">
           <h3 class="white subtitle is-3 center font-beba has-text-white">
             Brief Bio
           </h3>
-          <p id="hero-bio" class="has-text-white is-size-4 has-text-centered"></p>
+          <p id="hero-bio" class="has-text-white is-size-4 has-text-centered">
+            <!-- Hero bio will appear here -->
+          </p>
         </div>
         <div class="section is-hidden" id="results-container">
-          <div class="results columns is-multiline is-justify-content-center" id="results"></div>
+          <div class="results columns is-multiline is-justify-content-center" id="results">
+            <!-- A list of comics will appear here if API call has no description -->
+          </div>
         </div>
       </div>
     </div>
@@ -47,6 +52,7 @@
     </h2>
     <img class="giphy-credit" src="./assets/images/PoweredBy_200_Horizontal_Light-Backgrounds_With_Logo.gif" alt="">
     <div class="results columns is-multiline is-centered" id="gifs">
+      <!-- Gifs will appear here -->
     </div>
   </section>
 

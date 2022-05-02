@@ -103,6 +103,7 @@ var characterPage = function (data, dataId) {
             imgContainerEl.classList = "card-image";
             imgEl.classList = "";
             imgEl.setAttribute("src", comicImage + "/portrait_fantastic.jpg")
+            imgEl.setAttribute("alt", "Comic book cover for " + comicTitle);
             imgContainerEl.appendChild(imgEl);
 
             //create span element to hold hero name

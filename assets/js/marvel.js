@@ -38,6 +38,7 @@ var displayResults = function (hero) {
     imgContainerEl.classList = "card-image";
     imgEl.classList = "";
     imgEl.setAttribute("src", characterImg + "/portrait_fantastic.jpg");
+    imgEl.setAttribute("alt", "Thumbnail for " + heroName);
     imgContainerEl.appendChild(imgEl);
 
     //create span element to hold repo name
