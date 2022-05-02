@@ -32,36 +32,32 @@ var displayResults = function (hero) {
 
     // create img element
     var characterImg = hero.data.results[i].thumbnail.path;
-    var imgContainerEl = document.createElement("div")
+    var imgContainerEl = document.createElement("div");
     var imgEl = document.createElement("img");
     imgContainerEl.classList = "card-image";
     imgEl.classList = "";
-    imgEl.setAttribute("src", characterImg + "/portrait_fantastic.jpg")
+    imgEl.setAttribute("src", characterImg + "/portrait_fantastic.jpg");
     imgContainerEl.appendChild(imgEl);
 
     //create span element to hold repo name
     var heroNameEl = document.createElement("span");
     heroNameEl.setAttribute("class", "hero-name-btn");
-    heroNameEl.classList = "hero-name-btn font-beba is-size-5"
+    heroNameEl.classList = "hero-name-btn font-beba is-size-5";
     heroNameEl.textContent = heroName;
 
     //append to container
     heroResultEl.appendChild(imgContainerEl);
     heroResultEl.appendChild(heroNameEl);
 
-
     //append container to the dom
     resultsEl.appendChild(heroResultEl);
   }
-
 };
 
 var getUserInput = function (event) {
   event.preventDefault();
   var heroName = searchInput.value.trim();
   if (heroName) {
-    console.log(heroName);
-
     getMarvelData(heroName);
     getGifs(heroName);
     searchInput.value = "";
@@ -81,42 +77,50 @@ $(function () {
           nameStartsWith: request.term,
           limit: 11,
           apikey: "1c68710c9a12fca3d6066e8f1e1bc1c1",
-          hash: "acdbcd7e533a37b7ba8af93b84c3021e"
-
+          hash: "acdbcd7e533a37b7ba8af93b84c3021e",
         },
         success: function (data) {
-          console.log(data);
-          response($.map(data.data.results, function (item) {
-            return {
-              label: item.name,
-              value: item.name
-            }
-          }));
-        }
+          response(
+            $.map(data.data.results, function (item) {
+              return {
+                label: item.name,
+                value: item.name,
+              };
+            })
+          );
+        },
       });
     },
     minLength: 2,
     select: function (event, ui) {
-      if (ui.item) { }
-    }
+      if (ui.item) {
+      }
+    },
   });
 });
 
 var getMarvelData = function (hero) {
-  var apiUrl = "https://gateway.marvel.com/v1/public/characters?ts=" + ts + "&nameStartsWith=" + hero + "&limit=11&apikey=" + APIKey + "&hash=" + hashKey;
+  var apiUrl =
+    "https://gateway.marvel.com/v1/public/characters?ts=" +
+    ts +
+    "&nameStartsWith=" +
+    hero +
+    "&limit=11&apikey=" +
+    APIKey +
+    "&hash=" +
+    hashKey;
   fetch(apiUrl).then(function (response) {
     if (response.ok) {
       response.json().then(function (data) {
-        console.log(data);
         displayResults(data);
       });
     }
   });
-}
+};
 
 searchEl.addEventListener("submit", getUserInput);
-$("#results").on('click', 'a', function() {
-  var name = this.textContent
+
+$("#results").on("click", "a", function () {
+  var name = this.textContent;
   localStorage.setItem("search", name);
-  console.log(name);
-})
+});
