@@ -54,6 +54,7 @@ var displayResults = function (hero) {
   }
 };
 
+// Gets user input
 var getUserInput = function (event) {
   event.preventDefault();
   var heroName = searchInput.value.trim();
@@ -61,7 +62,8 @@ var getUserInput = function (event) {
     getMarvelData(heroName);
     searchInput.value = "";
   } else {
-    alert("enter hero name");
+    resultsEl.textContent = "Please enter a name";
+    return false;
   }
 };
 
