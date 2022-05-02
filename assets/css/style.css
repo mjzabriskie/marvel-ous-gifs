@@ -19,7 +19,7 @@
 }
 
 .hero {
-    background-image: url("./images/marvel_comics.jpg");
+    background-image: url("../images/marvel_comics.jpg");
     background-size: cover;
 }
 
