@@ -59,7 +59,6 @@ var getUserInput = function (event) {
   var heroName = searchInput.value.trim();
   if (heroName) {
     getMarvelData(heroName);
-    getGifs(heroName);
     searchInput.value = "";
   } else {
     alert("enter hero name");
