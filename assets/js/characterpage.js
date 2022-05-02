@@ -118,7 +118,6 @@ var characterPage = function (data, dataId) {
             heroResultEl.appendChild(imgContainerEl);
             heroResultEl.appendChild(heroNameEl);
 
-
             //append container to the dom
             comicEl.appendChild(heroResultEl);
         }
