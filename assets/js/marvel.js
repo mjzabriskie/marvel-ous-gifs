@@ -114,16 +114,6 @@ var getMarvelData = function (hero) {
   });
 }
 
-var getGifs = function (hero) {
-  var apiUrl = "https://api.giphy.com/v1/gifs/search?api_key=l0bmAzCfm8fxpcpAusIYozKfaOUG4B22&q=" + hero + "+cartoon&limit=6&offset=0&rating=pg-13&lang=en";
-  fetch(apiUrl).then(function (response) {
-    if (response.ok) {
-      response.json().then(function (data) {
-        console.log(data);
-      })
-    }
-  })
-}
 searchEl.addEventListener("submit", getUserInput);
 $("#results").on('click', 'a', function() {
   var name = this.textContent

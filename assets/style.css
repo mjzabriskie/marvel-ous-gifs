@@ -62,6 +62,25 @@
 
 .cards:hover {
     transform: scale(1.05);
-    transition: 500ms, 500ms;
+    transition: 500ms;
     color: #eee7e7;
+}
+
+.results {
+    padding: 10px 60px;
+}
+
+.gif-result {
+    margin: 10px;
+    transition: 200ms;
+}
+
+.gif-result:hover {
+    transform: scale(1.08);
+    transition: 500ms;
+}
+
+.giphy-credit {
+    display: block;
+    margin: -20px auto 40px auto;
 }
