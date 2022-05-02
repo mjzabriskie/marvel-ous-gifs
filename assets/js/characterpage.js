@@ -87,7 +87,7 @@ var characterPage = function (data, dataId) {
     var characterImg = data.data.results[0].thumbnail.path;
     if(characterBio === "") {
         console.log("empty");
-        bioContentEl.textContent = "";
+        bioContentEl.textContent = "No Bio For This Hero";
         for(var i = 0; i < dataId.data.count; i++) {
             var comicTitle = dataId.data.results[i].title;
             var comicImage = dataId.data.results[i].thumbnail.path;
