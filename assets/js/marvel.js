@@ -9,6 +9,7 @@ const giphyKey = "l0bmAzCfm8fxpcpAusIYozKfaOUG4B22";
 
 var ts = 1;
 
+// Displays result boxes for the name the user entered.
 var displayResults = function (hero) {
   //check if api returned any heros
   if (hero.data.count === 0) {
@@ -54,7 +55,7 @@ var displayResults = function (hero) {
   }
 };
 
-// Gets user input
+// Gets hero name input and insures a name is entered.
 var getUserInput = function (event) {
   event.preventDefault();
   var heroName = searchInput.value.trim();
@@ -67,6 +68,7 @@ var getUserInput = function (event) {
   }
 };
 
+// Function that creates a search autocomplete as the user begins to type.
 $(function () {
   $("#search-input").autocomplete({
     source: function (request, response) {
@@ -100,6 +102,7 @@ $(function () {
   });
 });
 
+// Fetches data from the Marvel API depending on what the user searched.
 var getMarvelData = function (hero) {
   var apiUrl =
     "https://gateway.marvel.com/v1/public/characters?ts=" +
@@ -119,8 +122,12 @@ var getMarvelData = function (hero) {
   });
 };
 
+// Event listeners for the search button.
 searchEl.addEventListener("submit", getUserInput);
 
+/* Event listener for the results section that pulls
+the text from the anchor element and saves that text to localStorage.
+Text saved in localStorage is later used for the character html page. */
 $("#results").on("click", "a", function () {
   var name = this.textContent;
   localStorage.setItem("search", name);
