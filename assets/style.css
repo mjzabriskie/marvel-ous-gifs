@@ -4,6 +4,12 @@
     align-items: center;
 }
 
+.center-img {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 .red {
     color: #ff0000;
 }
@@ -12,11 +18,92 @@
     font-family: 'Bebas Neue', cursive;
 }
 
-.container {
-    background-image: url("./images/Marvel-hero.webp");
+.hero {
+    background-image: url("./images/marvel_comics.jpg");
     background-size: cover;
+}
+
+.user-form {
+    background-image: linear-gradient(340deg, #ff0000, #0000);
+    background-size: cover;
+    border-radius: 15px;
+    padding: 20px;
+    color: #c0c0c0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.search-bar {
+    border: 1px solid #ff0000;
+    padding: 7px 15px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .white {
     color: #ffffff;
 }
+
+.cards {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+    background-image: linear-gradient(340deg, #ff0000, #0000);
+    background-size: cover;
+    border-radius: 15px;
+    padding: 20px;
+    color: #eee7e7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    max-width: 190.79px;
+    min-width: 190.79px;
+    transition: 200ms;
+}
+
+.content {
+    margin-left: 150px;
+    max-width: 40%;
+}
+
+.cards:hover {
+    transform: scale(1.05);
+    transition: 500ms;
+    color: #eee7e7;
+}
+
+.results {
+    padding: 10px;
+    display: flex;
+}
+
+.gif-result {
+    margin: 10px;
+    transition: 200ms;
+}
+
+.gif-result:hover {
+    transform: scale(1.08);
+    transition: 500ms;
+}
+
+.giphy-credit {
+    display: block;
+    margin: -20px auto 40px auto;
+}
+
+@media screen and (max-width: 980px) {
+    .content {
+        margin-left: 50px;
+        max-width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .content {
+        margin-left: 0px;
+        max-width: 100%;
+    }
+  }

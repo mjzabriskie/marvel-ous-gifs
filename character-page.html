@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marvel-ous Gifs</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+
+<header>
+  <a href="/index.html">
+    <h1 class="title is-1 center red font-beba has-background-black">
+      Marvel-ous Gifs
+    </h1>
+  </a>
+</header>
+
+<body>
+  <section class="has-background-black">
+    <div class="hero-body">
+      <h1 id="character-name" class="title is-2 center red font-beba">
+        Character name here
+      </h1>
+      <div class="columns is-centered is-multiline">
+        <div class="center-img">
+          <img id="hero-img" alt="">
+        </div>
+        <div id="bio-content" class="column content">
+          <h3 class="white subtitle is-3 center font-beba has-text-white">
+            Brief Bio
+          </h3>
+          <p id="hero-bio" class="has-text-white is-size-4 has-text-centered"></p>
+        </div>
+        <div class="section is-hidden" id="results-container">
+          <div class="results columns is-multiline is-justify-content-center" id="results"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="has-background-black">
+    <h2 class="title is-2 center red font-beba">
+      Popular Gifs
+    </h2>
+    <img class="giphy-credit" src="./assets/images/PoweredBy_200_Horizontal_Light-Backgrounds_With_Logo.gif" alt="">
+    <div class="results columns is-multiline is-centered" id="gifs">
+    </div>
+  </section>
+
+  <footer>
+    <div class="has-text-centered has-background-black has-text-white">
+      <p>Data provided by Marvel. © 2014 Marvel</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="./assets/js/characterpage.js"></script>
+</body>
+
+</html>
