@@ -94,6 +94,12 @@
     margin: -20px auto 40px auto;
 }
 
+.no-hero-found {
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 30px;
+
+}
+
 @media screen and (max-width: 980px) {
     .content {
         margin-left: 50px;
