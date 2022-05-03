@@ -8,7 +8,7 @@ We created a website that allows you to easily access information about your fav
 
 * Hero Bio
 
-    * Marvel-ous includes a search box that will allow you to type in a Marvel Heroes name. 
+* Marvel-ous includes a search box that will allow you to type in a Marvel Heroes name. 
 
 ## Technologies Used:
 
