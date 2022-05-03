@@ -7,7 +7,7 @@ const APIKey = "1c68710c9a12fca3d6066e8f1e1bc1c1";
 const hashKey = "acdbcd7e533a37b7ba8af93b84c3021e";
 var ts = 1;
 
-/* Function that displays gifs based off of 
+/* Function that displays gifs based off of
 what name the user entered in the home page. */
 var displayGifs = function (gifs) {
     //check if api returned any gifs
@@ -40,7 +40,7 @@ var displayGifs = function (gifs) {
     }
 }
 
-// Fetches data from Giphy API 
+// Fetches data from Giphy API
 var getGifs = function (hero) {
     var apiUrl = "https://api.giphy.com/v1/gifs/search?api_key=l0bmAzCfm8fxpcpAusIYozKfaOUG4B22&q=" + hero + "&limit=30&offset=0&lang=en";
     fetch(apiUrl).then(function (response) {
@@ -60,7 +60,6 @@ var getMarvelData = function () {
     fetch(apiUrl).then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
-                console.log(data);
                 var apiUrl = "https://gateway.marvel.com/v1/public/characters/" + data.data.results[0].id + "/comics?" + "ts=" + ts + "&limit=5&apikey=" + APIKey + "&hash=" + hashKey;
                 fetch(apiUrl).then(function (response) {
                     if (response.ok) {
@@ -121,13 +120,13 @@ var characterPage = function (data, dataId) {
             //append container to the dom
             comicEl.appendChild(heroResultEl);
         }
-        // checks if no comics are available 
+        // checks if no comics are available
         if (emptyCharacter == 0) {
             comicContainerEl.classList.add("is-hidden");
             bioContentEl.classList.add("is-hidden");
             console.log(true);
         }
-    } 
+    }
 
     // Checks if description has certain characters
     if(characterBio.includes("<p class")) {
