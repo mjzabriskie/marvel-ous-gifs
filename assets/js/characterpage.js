@@ -124,7 +124,6 @@ var characterPage = function (data, dataId) {
         if (emptyCharacter == 0) {
             comicContainerEl.classList.add("is-hidden");
             bioContentEl.classList.add("is-hidden");
-            console.log(true);
         }
     }
 
