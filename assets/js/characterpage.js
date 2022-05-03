@@ -7,7 +7,7 @@ const APIKey = "1c68710c9a12fca3d6066e8f1e1bc1c1";
 const hashKey = "acdbcd7e533a37b7ba8af93b84c3021e";
 var ts = 1;
 
-/* Function that displays gifs based off of 
+/* Function that displays gifs based off of
 what name the user entered in the home page. */
 var displayGifs = function (gifs) {
     //check if api returned any gifs
@@ -40,7 +40,7 @@ var displayGifs = function (gifs) {
     }
 }
 
-// Fetches data from Giphy API 
+// Fetches data from Giphy API
 var getGifs = function (hero) {
     var apiUrl = "https://api.giphy.com/v1/gifs/search?api_key=l0bmAzCfm8fxpcpAusIYozKfaOUG4B22&q=" + hero + "&limit=30&offset=0&lang=en";
     fetch(apiUrl).then(function (response) {
@@ -80,6 +80,7 @@ var characterPage = function (data, dataId) {
     var characterName = data.data.results[0].name;
     var characterBio = data.data.results[0].description;
     var characterImg = data.data.results[0].thumbnail.path;
+    var emptyCharacter = data.data.results[0].comics.available;
 
     // If the API call has an empty description, a list of comics are returned.
     if (characterBio === "") {
@@ -116,15 +117,30 @@ var characterPage = function (data, dataId) {
             heroResultEl.appendChild(imgContainerEl);
             heroResultEl.appendChild(heroNameEl);
 
-
             //append container to the dom
             comicEl.appendChild(heroResultEl);
         }
+        // checks if no comics are available
+        if (emptyCharacter == 0) {
+            comicContainerEl.classList.add("is-hidden");
+            bioContentEl.classList.add("is-hidden");
+        }
     }
-    // creates a hero bio if a description is pulled from API
-    $("#hero-img").attr("src", characterImg + "/portrait_uncanny.jpg");
-    $("#hero-bio").text(characterBio);
-    $("#character-name").text(characterName);
+
+    // Checks if description has certain characters
+    if(characterBio.includes("<p class")) {
+        var splitHero = characterBio.split(">")
+        var newSplitHero = splitHero[1];
+        var newSplitHero2 = newSplitHero.split("<");
+        $("#hero-img").attr("src", characterImg + "/portrait_uncanny.jpg");
+        $("#hero-bio").text(newSplitHero2[0]);
+        $("#character-name").text(characterName);
+    }else {
+        // creates a hero bio if a description is pulled from API
+        $("#hero-img").attr("src", characterImg + "/portrait_uncanny.jpg");
+        $("#hero-bio").text(characterBio);
+        $("#character-name").text(characterName);
+    }
 };
 
 getMarvelData();

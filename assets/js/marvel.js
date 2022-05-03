@@ -13,11 +13,13 @@ var ts = 1;
 var displayResults = function (hero) {
   //check if api returned any heros
   if (hero.data.count === 0) {
-    resultsEl.textContent = "No hero found.";
+    resultsEl.classList.add("no-hero-found")
+    resultsEl.textContent = "No hero found";
     return false;
   }
 
   //clear old content
+  resultsEl.classList.remove("no-hero-found");
   resultsEl.textContent = "";
 
   //loop over heros
